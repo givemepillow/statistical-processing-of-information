@@ -1,6 +1,6 @@
 negative_values_plot <- function(df) {
-  return(c(
-    lapply(df, function(c) length(c[c > 0])),
-    lapply(df, function(c) length(c[c < 0]))
+  return(list(
+    pos = lapply(df, function(c) length(c[c > 0])),
+    neg = lapply(df, function(c) length(c[c < 0]))
     ))
 }
