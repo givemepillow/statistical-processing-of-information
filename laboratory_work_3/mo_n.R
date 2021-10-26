@@ -1,6 +1,6 @@
 vec = array()
 vectors_mean = vector(length = 1000)
-plot(c(0,1000), c(0,3), type = 'n',
+plot(c(0,1000), c(0, 3) , type = 'n',
      xlab = 'N', ylab = 'МО', main ='График зависимости МО от N')
 for (i in 0:100) {
   binom = rbinom(0:1000,10,0.1)
@@ -21,7 +21,6 @@ for (i in 1:1000) {
 }
 lines(vec, type = 'l', lwd =2, col='purple' )
 for (i in 1:1000) {
-  
   for (i in 1:1000) vec[i] = mean(vectors_mean[1:i]) + (3 * (0.95 / i ** (1/2)))
   
 }
