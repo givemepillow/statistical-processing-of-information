@@ -6,25 +6,25 @@ for (i in 0:100) {
   binom = rbinom(0:1000,10,0.1)
   vectors_mean = vectors_mean + as.vector(binom)
   for (i in 1:1000) vec[i] = mean(binom[1:i])
-  lines(vec, type = 'l', lwd =1, col='black' )
+  lines(vec, type = 'l', lwd =1, col=rand_color(10, luminosity = "bright"))
 }
 vectors_mean = vectors_mean / 100
 
 legend(800, 2.5, legend=c("МО"),
        col=c("red"), lty=1:2, cex=0.8)
 legend(700, 2, legend=c("МО +- 3ско"),
-       col=c("purple"), lty=1:2, cex=0.8)
+       col=c("black"), lty=1:2, cex=0.8)
 
 for (i in 1:1000) {
   for (i in 1:1000) vec[i] = mean(vectors_mean[1:i]) - (3 * (0.95 / i ** (1/2)))
   
 }
-lines(vec, type = 'l', lwd =2, col='purple' )
+lines(vec, type = 'l', lwd =3, col='black' )
 for (i in 1:1000) {
   for (i in 1:1000) vec[i] = mean(vectors_mean[1:i]) + (3 * (0.95 / i ** (1/2)))
   
 }
-lines(vec, type = 'l', lwd =2, col='purple' )
+lines(vec, type = 'l', lwd =3, col='black' )
 abline(h = 1, col = 'red', lwd = 2)
 
 
